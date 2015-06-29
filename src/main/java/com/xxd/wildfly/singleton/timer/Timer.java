@@ -44,8 +44,10 @@ public class Timer {
             User user = new User("xxd-" + i);
             sessionBean.create(user);
         }
-
         index = index + BATCH_SIZE;
+        // uncomment the following 2 lines will fix the issue...
+        // userList = sessionBean.findAll();
+        // LOG.info("before finishing, user list size is : {}", userList.size());
         LOG.info("finished to runPeriodically...");
     }
 
